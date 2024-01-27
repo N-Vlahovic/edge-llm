@@ -45,3 +45,9 @@ Given the compute and memory limitations of our platform, we should aim at deplo
 ```zsh
 docker exec -it ollama ollama pull tinyllama
 ```
+
+
+#### Logging into the Web-UI
+Using any device connected to the same network as your Jetson Nano, navigate to the URL `http://<HOST>:<WEB_UI_PORT>` (the `HOST` can typically be the `hostname` of your Jetson Nano e.g. `jetson-nano.local` or its ip-address which can be determined via `ip a`).
+
+You should be prompted with this ![login screen](./inst/Ollama-WebUI-Login.png).
