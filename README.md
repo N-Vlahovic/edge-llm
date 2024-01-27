@@ -3,6 +3,7 @@
 
 Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models such as [TinyLlama](https://huggingface.co/TinyLlama) and leverage their power using a web-ui.
 
+## Getting Started
 
 - [Requirements](#requirements)
 - [Updating Docker](#updating-docker)
@@ -17,10 +18,7 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 - 32GB >= Storage (64GB >= preferred)
 - JetPack SDK
 
-
-### Getting Started
-
-#### Updating Docker
+### Updating Docker
 If you installed JetPack following the [official getting-started docs](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit), it might be that your `docker; docker-compose` version is somewhat dated. 
 
 Running `make docker-update` will update `docker; docker-compose` by invoking the `./scripts/update_docker.sh` script, which:
@@ -32,7 +30,7 @@ Running `make docker-update` will update `docker; docker-compose` by invoking th
 - Adds the current `$USER` to the `docker` user group (a reboot will be necessary)
 
 
-#### Creating an ENV File
+### Creating an ENV File
 The `docker-compose.yml` file has abstracted certain parameters by leveraging `.env` files. An `.env` file with the following variables needs to be created:
 - `LLM_PORT=<int>`: The exposed port (on the Jetson nano - not the container) of the LLM backend. 
 - `WEBUI_PORT=<int>`: The exposed port (on the Jetson nano - not the container) of the LLM WebUI. 
@@ -42,11 +40,11 @@ Here is a possible way to create the `.env` file:
 echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
 ```
 
-#### Building the Services
+### Building the Services
 To build the services, simply run `make build` which invokes the script `./scripts/build.sh`.
 
 
-#### Pulling Models
+### Pulling Models
 Our setup uses [Ollama](https://ollama.ai/) as backend, here is a list of [out-of-the-box available models](https://ollama.ai/library).
 
 Given the compute and memory limitations of our platform, we should aim at deploying small models, e.g.
@@ -55,7 +53,7 @@ docker exec -it ollama ollama pull tinyllama
 ```
 
 
-#### Logging into the Web-UI
+### Logging into the Web-UI
 Using any device connected to the same network as your Jetson Nano, navigate to the URL `http://<HOST>:<WEB_UI_PORT>` (the `HOST` can typically be the `hostname` of your Jetson Nano e.g. `jetson-nano.local` or its ip-address which can be determined via `ip a`).
 
 You should be prompted with this login screen. ![login screen](./inst/Ollama-WebUI-Login.png)
