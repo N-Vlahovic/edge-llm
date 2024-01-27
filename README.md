@@ -50,4 +50,6 @@ docker exec -it ollama ollama pull tinyllama
 #### Logging into the Web-UI
 Using any device connected to the same network as your Jetson Nano, navigate to the URL `http://<HOST>:<WEB_UI_PORT>` (the `HOST` can typically be the `hostname` of your Jetson Nano e.g. `jetson-nano.local` or its ip-address which can be determined via `ip a`).
 
-You should be prompted with this ![login screen](./inst/Ollama-WebUI-Login.png).
+You should be prompted with this login screen. ![login screen](./inst/Ollama-WebUI-Login.png)
+If you didn't create an account, create one via the *Sign up* link. ![login screen](./inst/Ollama-WebUI-LoggedIn.png) 
+Please note that this creates a local account. For persistency, the data is saved via `docker volumes` onto the filesystem in the `./ollama-webui` directory (which is excluded from `git`).
