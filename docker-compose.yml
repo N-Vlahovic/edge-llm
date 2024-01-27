@@ -1,0 +1,48 @@
+version: '3.8'
+
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/24
+
+services:
+
+  ollama:
+    container_name: 'ollama'
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./ollama.Dockerfile
+    volumes:
+      - ./ollama:/root/.ollama
+    env_file:
+      - .env
+    ports:
+      - '${OLLAMA_PORT}:11434'
+    # Passing the GPU to our service/container
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  ollama_webui:
+    container_name: 'ollama-webui'
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./ollama-webui.Dockerfile
+    volumes:
+      - ./ollama-webui:/app/backend/data
+    ports:
+      - '${WEBUI_PORT}:8080'
+    env_file:
+      - .env
+    environment:
+      - OLLAMA_API_BASE_URL=http://ollama:11434/api
+    depends_on:
+      - ollama
