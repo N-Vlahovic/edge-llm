@@ -43,5 +43,5 @@ Our setup uses [Ollama](https://ollama.ai/) as backend, here is a list of [out-o
 
 Given the compute and memory limitations of our platform, we should aim at deploying small models, e.g.
 ```zsh
-docker exec -it ollama ollaman pull tinyllama
+docker exec -it ollama ollama pull tinyllama
 ```
