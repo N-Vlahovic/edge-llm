@@ -35,3 +35,13 @@ echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
 ```
 
 #### Building the Services
+To build the services, simply run `make build` which invokes the script `./scripts/build.sh`.
+
+
+#### Pulling Models
+Our setup uses [Ollama](https://ollama.ai/) as backend, here is a list of [out-of-the-box available models](https://ollama.ai/library).
+
+Given the compute and memory limitations of our platform, we should aim at deploying small models, e.g.
+```zsh
+docker exec -it ollama ollaman pull tinyllama
+```
