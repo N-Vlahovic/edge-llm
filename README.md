@@ -55,3 +55,5 @@ If you didn't create an account, create one via the *Sign up* link. ![login scre
 Please note that this creates a local account. For persistency, the data is saved via `docker volumes` onto the filesystem in the `./ollama-webui` directory (which is excluded from `git`).
 
 Once logged in, this how the UI should look like: ![logged in screen](./inst/Ollama-WebUI-LoggedIn.png).
+
+You can now select a model and start a prompt - enjoy! ![chat screen](./inst/Ollama-WebUI-Chat.png).
