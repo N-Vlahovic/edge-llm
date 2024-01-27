@@ -54,4 +54,4 @@ You should be prompted with this login screen. ![login screen](./inst/Ollama-Web
 If you didn't create an account, create one via the *Sign up* link. ![login screen](./inst/Ollama-WebUI-Sign-Up.png) 
 Please note that this creates a local account. For persistency, the data is saved via `docker volumes` onto the filesystem in the `./ollama-webui` directory (which is excluded from `git`).
 
-Once logged in, this how the UI should look like: ![logged in screen](./inst/Ollama-WebUI-LoggedIn.png)
+Once logged in, this how the UI should look like: ![logged in screen](./inst/Ollama-WebUI-LoggedIn.png).
