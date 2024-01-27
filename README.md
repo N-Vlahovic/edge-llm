@@ -5,6 +5,11 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 
 
 - [Requirements](###requirements)
+- [Updating Docker](###updating-docker)
+- [Creating an ENV File](###creating-an-env-file)
+- [Building the Services](###building-the-services)
+- [Pulling Models](###pulling-models)
+- [Logging into the Web-UI](###logging-into-the-web-ui)
 
 ### Requirements
 - NVidia Jetson Nano
