@@ -22,3 +22,16 @@ Running `make docker-update` will update `docker; docker-compose` by invoking th
 - Installs the Docker packages
 - Enables docker service
 - Adds the current `$USER` to the `docker` user group (a reboot will be necessary)
+
+
+#### Creating an ENV File
+The `docker-compose.yml` file has abstracted certain parameters by leveraging `.env` files. An `.env` file with the following variables needs to be created:
+- `LLM_PORT=<int>`: The exposed port (on the Jetson nano - not the container) of the LLM backend. 
+- `WEBUI_PORT=<int>`: The exposed port (on the Jetson nano - not the container) of the LLM WebUI. 
+
+Here is a possible way to create the `.env` file:
+```zsh
+echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
+```
+
+#### Building the Services
