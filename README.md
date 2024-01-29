@@ -18,10 +18,16 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 - 32GB >= Storage (64GB >= preferred)
 - JetPack SDK
 
+### Quickstart
+```
+make build
+```
+
 ### Updating Docker
 If you installed JetPack following the [official getting-started docs](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit), it might be that your `docker; docker-compose` version is somewhat dated. 
 
-Running `make docker-update` will update `docker; docker-compose` by invoking the `./scripts/update_docker.sh` script, which:
+Running `make docker-update` will update `docker; docker-compose` by invoking the `./scripts/update_docker.py` script, which:
+- Checks if the docker version is 
 - Removes the existing `docker; docker-compose` installations
 - Adds the Docker's official GPG key
 - Adds the repository to Apt sources
@@ -41,7 +47,7 @@ echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
 ```
 
 ### Building the Services
-To build the services, simply run `make build` which invokes the script `./scripts/build.sh`.
+To build the services, simply run `make build` which invokes the scripts `./scripts/update_docker.py` and  `./scripts/build.sh` sequentially.
 
 
 ### Pulling Models
