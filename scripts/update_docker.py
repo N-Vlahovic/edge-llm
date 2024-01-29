@@ -40,7 +40,7 @@ def docker_update_needed() -> bool:
 
 
 def run_rocker_update_script() -> int:
-    subprocess.run(f'bash {DOCKER_UPDATE_FILE}')
+    subprocess.run(DOCKER_UPDATE_FILE)
 
 
 def main() -> None:
