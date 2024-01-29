@@ -18,8 +18,6 @@ make init
 ```
 in case you already cloned and CD'd into the repo.
 
----
-
 ## Getting Started
 
 - [Requirements](#requirements)
