@@ -53,7 +53,10 @@ echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
 ```
 
 ### Building the Services
-To build the services, simply run `make build` which invokes the scripts `./scripts/update_docker.py` and  `./scripts/build.sh` sequentially.
+To build the services, simply run `make build` which runs `docker compose up --build -d`.
+
+### Stop or Kill
+To stop or kill the services, you can run `make <stop|kill>` which runs `docker compose <stop|down -v>`.
 
 
 ### Pulling Models
