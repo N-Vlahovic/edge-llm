@@ -8,7 +8,7 @@ from typing import Tuple
 
 
 DOCKER_MIN_VERSION: str = '19.03.0+'
-SCRIPTS_PATH: Path = Path(os.path.abspath(__file__))
+SCRIPTS_PATH: Path = Path(os.path.abspath(__file__)).parent
 DOCKER_UPDATE_FILE: Path = SCRIPTS_PATH.joinpath('update_docker.sh')
 
 
