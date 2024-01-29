@@ -6,6 +6,9 @@ init:           ## Build the services
 build:          ## Build the services
 	docker compose up --build -d
 
+pull: $(model)  ## Pull a model
+	docker exec -it ollama ollama pull $(model)
+
 stop:           ## Stops the services
 	docker compose stop
 
