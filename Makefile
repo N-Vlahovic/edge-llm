@@ -1,7 +1,6 @@
 build:        ## Build the services
 	python3 scripts/update_docker.py
-	chmod +x scripts/build.sh
-	scripts/build.sh
+	docker compose up --build -d
 
 stop:        ## Stops the services
 	docker compose stop
