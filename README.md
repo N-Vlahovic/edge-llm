@@ -20,6 +20,8 @@ in case you already cloned and CD'd into the repo.
 
 The WebUI is available under `http://<jetson-ip>:<WEBUI_PORT>` and the LLM backend under `http://<jetson-ip>:<LLM_PORT>`.
 
+You can now proceed to [logging in](#logging-into-the-web-ui).
+
 ## Getting Started
 
 - [Requirements](#requirements)
