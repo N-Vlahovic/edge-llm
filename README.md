@@ -45,6 +45,10 @@ The `docker-compose.yml` file has abstracted certain parameters by leveraging `.
 
 Here is a possible way to create the `.env` file:
 ```zsh
+python3 scripts/check_dotenv.py
+```
+or
+```zsh
 echo 'LLM_PORT=8000' >> .env && echo 'WEBUI_PORT=3000' >> .env
 ```
 
