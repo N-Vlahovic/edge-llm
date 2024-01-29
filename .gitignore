@@ -1,3 +1,4 @@
 .env
 ollama/
 ollama-webui/
+.DS_Store
