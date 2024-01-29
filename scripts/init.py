@@ -25,9 +25,8 @@ def create_dotenv(
     port_llm = helper('LLM', default_port_llm)
     port_webui = helper('WEBUI', default_port_webui)
 
-    with open(DOTENV_FILE, 'a') as f:
-        f.write(port_llm)
-        f.write(port_webui)
+    with open(DOTENV_FILE, 'w') as f:
+        f.write(f'{port_llm}\n{port_webui)}'
 
 def main() -> None:
     if not dotenv_exists():
