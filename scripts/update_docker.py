@@ -44,8 +44,11 @@ def run_rocker_update_script() -> int:
 
 
 def main() -> None:
-    run_rocker_update_script()
-    exit(1 if docker_update_needed() else 0)
+    if docker_update_needed():
+        print('updating docker')
+        run_rocker_update_script()
+    else:
+        print('docker already up to date')
 
 
 if __name__ == '__main__':
