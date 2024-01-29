@@ -72,10 +72,16 @@ To stop or kill the services, you can run `make <stop|kill>` which runs `docker 
 ### Pulling Models
 Our setup uses [Ollama](https://ollama.ai/) as backend, here is a list of [out-of-the-box available models](https://ollama.ai/library).
 
-Given the compute and memory limitations of our platform, we should aim at deploying small models, e.g.
+Models can be pulled as such:
 ```zsh
-docker exec -it ollama ollama pull tinyllama
+python3 scripts/pull_model.py -m <model>
 ```
+alternatively
+```zsh
+docker exec -it ollama ollama pull <model>
+```
+
+Given the compute and memory limitations of our platform, we should aim at deploying small models, e.g. `tinyllama`.
 
 
 ### Logging into the Web-UI
