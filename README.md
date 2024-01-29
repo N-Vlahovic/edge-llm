@@ -6,6 +6,7 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 ## Getting Started
 
 - [Requirements](#requirements)
+- [Quickstart](#quickstart)
 - [Updating Docker](#updating-docker)
 - [Creating an ENV File](#creating-an-env-file)
 - [Building the Services](#building-the-services)
@@ -19,8 +20,9 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 - JetPack SDK
 
 ### Quickstart
+Run the following command for a quickstart
 ```
-make build
+make init
 ```
 
 ### Updating Docker
