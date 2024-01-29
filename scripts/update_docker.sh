@@ -1,7 +1,7 @@
 sudo apt-get remove docker
 
 # Add Docker's official GPG key:
-if [ -f /etc/apt/keyrings/docker.asc ] then
+if [ -f /etc/apt/keyrings/docker.asc ]; then
   sudo apt-get update
   sudo apt-get install ca-certificates curl
   sudo install -m 0755 -d /etc/apt/keyrings
