@@ -21,7 +21,7 @@ def pull_model(model: str) -> None:
         'exec',
         '-it',
         LLM_SERVICE_NAME,
-        'ollaman',
+        'ollama',
         'pull',
         model,
     ])
