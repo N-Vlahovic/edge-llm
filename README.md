@@ -3,6 +3,23 @@
 
 Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models such as [TinyLlama](https://huggingface.co/TinyLlama) and leverage their power using a web-ui.
 
+---
+
+## Quickstart
+Run the following command for a quickstart
+```zsh
+git clone https://github.com/n-vlahovic/edge-llm
+cd edge-llm
+make init
+```
+or just
+```zsh
+make init
+```
+in case you already cloned and CD'd into the repo.
+
+---
+
 ## Getting Started
 
 - [Requirements](#requirements)
@@ -19,11 +36,6 @@ Seamlessly deploy LLMs locally on your Jetson Nano and make use of small models 
 - 32GB >= Storage (64GB >= preferred)
 - JetPack SDK
 
-### Quickstart
-Run the following command for a quickstart
-```
-make init
-```
 
 ### Updating Docker
 If you installed JetPack following the [official getting-started docs](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit), it might be that your `docker; docker-compose` version is somewhat dated. 
