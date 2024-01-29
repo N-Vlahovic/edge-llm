@@ -11,8 +11,8 @@ def dotenv_exists() -> bool:
 
 
 def create_dotenv(
-    default_port_llm: 8000,
-    default_port_webui: 3000,
+    default_port_llm: int = 8000,
+    default_port_webui: int = 3000,
 ) -> None:
     def helper(prompt: str, default: int) -> str:
         p = default
