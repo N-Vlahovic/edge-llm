@@ -1,12 +1,29 @@
+#/usr/bin/env bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+python3 "$SCRIPT_DIR/check_docker_version.py"
+ret=$?
+if [ $ret -ne 0 ]; then
+  echo 'docker update needed'
+else
+  echo 'docker up to date - terminating program'
+  exit 0
+fi
+
 # Remove exising docker package:
 sudo apt-get remove docker
 
 # Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+if [ -f /etc/apt/keyrings/docker.asc ] then
+  sudo apt-get update
+  sudo apt-get install ca-certificates curl
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+else 
+  echo 'certificate already exists'
+fi
 
 # Add the repository to Apt sources:
 echo \
@@ -19,6 +36,14 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Enable docker service:
-sudo systemctl enable docker.service
-sudo systemctl restart docker.service
-sudo usermod -aG docker $USER
+if systemctl status docker.service | grep -q 'enabled'; then
+  echo 'docker service already enabled'
+else
+  sudo systemctl enable docker.service
+  sudo systemctl restart docker.service
+fi
+if  groups $USER | grep -q 'docker'; then
+  echo "$USER already in docker group"
+else
+  sudo usermod -aG docker $USER
+fi
