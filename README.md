@@ -18,6 +18,8 @@ make init
 ```
 in case you already cloned and CD'd into the repo.
 
+The WebUI is available under `http://<jetson-ip>:<WEBUI_PORT>` and the LLM backend under `http://<jetson-ip>:<LLM_PORT>`.
+
 ## Getting Started
 
 - [Requirements](#requirements)
