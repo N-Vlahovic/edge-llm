@@ -1,6 +1,3 @@
-#/usr/bin/env bash
-
-# Remove exising docker package:
 sudo apt-get remove docker
 
 # Add Docker's official GPG key:
