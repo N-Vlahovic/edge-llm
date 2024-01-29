@@ -1,16 +1,5 @@
 #/usr/bin/env bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-python3 "$SCRIPT_DIR/check_docker_version.py"
-ret=$?
-if [ $ret -ne 0 ]; then
-  echo 'docker update needed'
-else
-  echo 'docker up to date - terminating program'
-  exit 0
-fi
-
 # Remove exising docker package:
 sudo apt-get remove docker
 
