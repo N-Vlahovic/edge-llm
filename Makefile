@@ -3,5 +3,4 @@ build:        ## Build the services
 	scripts/build.sh
 
 docker-update:        ## Build the services
-	chmod +x scripts/update_docker.sh
-	scripts/update_docker.sh
+	python3 scripts/update_docker.py
